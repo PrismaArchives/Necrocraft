@@ -1,22 +1,16 @@
 package ncraft.capabilities.UndeadLine;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class UndeadLevel implements IUndeadLevel {
+public class UndeadPlayer implements IUndeadPlayer {
 
 	
 	
-	public static int level = 0;
-	boolean isSentientUndead()
-	{
-		if (level == 1) {
-			return true;
-		}
-		return false;
-	}
+	
 	
 	
 	
@@ -36,10 +30,19 @@ public class UndeadLevel implements IUndeadLevel {
 	
 	
 	
-	
+	public static int level = 0;
+	boolean isSentientUndead()
+	{
+		if (level == 1) {
+			return true;
+		}
+		return false;
+	}
 	
 
-
+	UndeadPlayer(EntityPlayer player) {
+		
+	}
 
 
 

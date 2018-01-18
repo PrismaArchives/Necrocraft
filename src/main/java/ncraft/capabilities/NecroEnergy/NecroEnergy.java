@@ -1,6 +1,6 @@
 package ncraft.capabilities.NecroEnergy;
 
-import ncraft.capabilities.UndeadLine.UndeadLevel;
+import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 public class NecroEnergy implements INecroEnergy {
 	
 	
-	int level = UndeadLevel.level;
+	int level = UndeadPlayer.level;
 	
 	int energy = 0;
 	int max_energy() {

@@ -7,15 +7,15 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.Capability.IStorage;
 
-public class UndeadLevelStorage implements IStorage<IUndeadLevel> {
+public class UndeadPlayerStorage implements IStorage<IUndeadPlayer> {
 
 	@Override
-	public NBTBase writeNBT(Capability<IUndeadLevel> capability, IUndeadLevel instance, EnumFacing side) {
+	public NBTBase writeNBT(Capability<IUndeadPlayer> capability, IUndeadPlayer instance, EnumFacing side) {
 		return new	NBTTagInt(instance.getLevel());
 	}
 
 	@Override
-	public void readNBT(Capability<IUndeadLevel> capability, IUndeadLevel instance, EnumFacing side, NBTBase nbt) {
+	public void readNBT(Capability<IUndeadPlayer> capability, IUndeadPlayer instance, EnumFacing side, NBTBase nbt) {
 		 instance.setLevel( ((NBTPrimitive) nbt).getInt());
 	}
 

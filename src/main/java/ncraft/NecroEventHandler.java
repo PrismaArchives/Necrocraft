@@ -1,6 +1,6 @@
 package ncraft;
 
-import ncraft.capabilities.UndeadLine.UndeadLevel;
+import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.ITextComponent;

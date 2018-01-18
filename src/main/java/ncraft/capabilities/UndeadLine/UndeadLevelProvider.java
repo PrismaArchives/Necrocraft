@@ -8,32 +8,32 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 public class UndeadLevelProvider implements ICapabilitySerializable<NBTBase> {
 
-	@CapabilityInject(IUndeadLevel.class)
+	@CapabilityInject(IUndeadPlayer.class)
 	
-	public static final Capability<IUndeadLevel> UNDEAD_LEVEL_CAP = null;
+	public static final Capability<IUndeadPlayer> UNDEAD_PLAYER_CAP = null;
 	
-	private IUndeadLevel instance = UNDEAD_LEVEL_CAP.getDefaultInstance();
+	private IUndeadPlayer instance = UNDEAD_PLAYER_CAP.getDefaultInstance();
 	
 	@Override
 	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
 		// TODO Auto-generated method stub
-		return capability == UNDEAD_LEVEL_CAP;
+		return capability == UNDEAD_PLAYER_CAP;
 	}
 
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
 		// TODO Auto-generated method stub
-		return capability == UNDEAD_LEVEL_CAP ? UNDEAD_LEVEL_CAP.<T> cast (this.instance) : null;
+		return capability == UNDEAD_PLAYER_CAP ? UNDEAD_PLAYER_CAP.<T> cast (this.instance) : null;
 	}
 
 	@Override
 	public NBTBase serializeNBT() {
-		return UNDEAD_LEVEL_CAP.getStorage().writeNBT(UNDEAD_LEVEL_CAP, this.instance, null);
+		return UNDEAD_PLAYER_CAP.getStorage().writeNBT(UNDEAD_PLAYER_CAP, this.instance, null);
 	}
 
 	@Override
 	public void deserializeNBT(NBTBase nbt) {
-		UNDEAD_LEVEL_CAP.getStorage().readNBT(UNDEAD_LEVEL_CAP, this.instance, null, nbt);
+		UNDEAD_PLAYER_CAP.getStorage().readNBT(UNDEAD_PLAYER_CAP, this.instance, null, nbt);
 		
 	}
 

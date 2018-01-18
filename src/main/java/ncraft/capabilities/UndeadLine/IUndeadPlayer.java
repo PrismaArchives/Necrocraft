@@ -3,7 +3,7 @@ package ncraft.capabilities.UndeadLine;
 import net.minecraft.nbt.NBTPrimitive;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 
-public interface IUndeadLevel {
+public interface IUndeadPlayer {
 	
 	
 	
