@@ -7,6 +7,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -15,13 +16,26 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 @EventBusSubscriber
 
 public class NecroEventHandler {
-
-	static EntityPlayer player;
-	
-
+EntityPlayer undeadPlayer;
+ 	static int level = UndeadPlayer.level;
 	
 	
-
 	
+	@SubscribeEvent
+	public static void LichDeath(LivingDeathEvent event) {
+		if (event.getEntity() instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.getEntity();
+			if  (level == 0) { // change to level 2, Lesser Lich + for final implemenation
+				event.setCanceled(true);
+				player.setHealth(20);
+		
+		}
+			
+			
+	}
+	}
 	
 }
+	
+	
+

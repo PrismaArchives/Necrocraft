@@ -41,7 +41,7 @@ public class UndeadPlayer implements IUndeadPlayer {
 	
 
 	UndeadPlayer(EntityPlayer player) {
-		
+
 	}
 
 
