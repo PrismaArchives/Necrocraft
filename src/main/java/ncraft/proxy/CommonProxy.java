@@ -12,9 +12,9 @@ import ncraft.capabilities.NecroEnergy.INecroEnergy;
 import ncraft.capabilities.NecroEnergy.NecroEnergy;
 import ncraft.capabilities.NecroEnergy.NecroProvider;
 import ncraft.capabilities.NecroEnergy.NecroStorage;
-import ncraft.capabilities.UndeadLine.IUndeadLevel;
-import ncraft.capabilities.UndeadLine.UndeadLevel;
-import ncraft.capabilities.UndeadLine.UndeadLevelStorage;
+import ncraft.capabilities.UndeadLine.IUndeadPlayer;
+import ncraft.capabilities.UndeadLine.UndeadPlayer;
+import ncraft.capabilities.UndeadLine.UndeadPlayerStorage;
 import ncraft.items.SummoningStaff;
 import ncraft.items.UndeadLevelChanger;
 import net.minecraft.block.Block;
@@ -34,7 +34,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent e) {
 		CapabilityManager.INSTANCE.register(INecroEnergy.class,new NecroStorage(),NecroEnergy.class);
-		CapabilityManager.INSTANCE.register(IUndeadLevel.class, new UndeadLevelStorage(), UndeadLevel.class);
+		CapabilityManager.INSTANCE.register(IUndeadPlayer.class, new UndeadPlayerStorage(), UndeadPlayer.class);
 	} 
 	
 	public void Init(FMLInitializationEvent e) {
