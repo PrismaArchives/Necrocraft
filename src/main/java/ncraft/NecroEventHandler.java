@@ -4,6 +4,7 @@ import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -31,8 +32,8 @@ EntityPlayer undeadPlayer;
 				event.setCanceled(true);
 				player.setHealth(20);
 		
+			}
 		}
-	}
 	}
 	
 	
@@ -41,14 +42,16 @@ EntityPlayer undeadPlayer;
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			if  (level == 0) { // change to level 2, Lesser Lich + for final implemenation
-				//if (player.getActivePotionEffect(Mob) = MobEffect.INSTANT_DAMAGE);
-		
+				PotionEffect potion = player.getActivePotionEffect(null);
+			if (potion == player.getActivePotionEffect(MobEffects.WITHER)) {
+					UndeadPlayer.level = 1;
+				}
+			}
 		}
 	}
-	}
 	
 	
-	
+		
 	
 	
 	
