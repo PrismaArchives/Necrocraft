@@ -12,7 +12,7 @@ public class UndeadPlayer implements IUndeadPlayer {
 	
 	
 	
-	
+	public static int level = 0;
 	
 	
 	
@@ -30,20 +30,16 @@ public class UndeadPlayer implements IUndeadPlayer {
 	
 	
 	
-	public static int level = 0;
-	boolean isSentientUndead()
+
+	boolean isSentientUndead(EntityPlayer player)
 	{
 		if (level == 1) {
+			
 			return true;
 		}
 		return false;
 	}
 	
-
-	UndeadPlayer(EntityPlayer player) {
-
-	}
-
 
 
 
