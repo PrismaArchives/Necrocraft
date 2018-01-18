@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "necrocraft:bonecobble"
+  },
+  "pattern": [
+    "ddd",
+    "drd",
+    "ddd"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "d": {
+      "item": "minecraft:bone"
+        },
+    "r": {
+      "item": "minecraft:cobblestone"
+        }
+      }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "Prisma's Test Mod",
+  "name": "Prisma's Test Mod",
+  "description": "The Very First.",
+  "version": "${version}",
+  "mcversion": "${version}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Prisma"],
+  "credits": "ME",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
