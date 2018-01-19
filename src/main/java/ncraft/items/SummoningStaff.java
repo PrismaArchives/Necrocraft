@@ -10,4 +10,5 @@ public class SummoningStaff extends Item {
      setUnlocalizedName(Ncraft.MODID + ".summoningstaff");     
      this.setCreativeTab(CreativeTabs.COMBAT);
     } //don't forget will cause crashes
+    
 }

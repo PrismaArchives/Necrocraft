@@ -1,6 +1,10 @@
 package ncraft;
 
+import ncraft.capabilities.NecroEnergy.INecroEnergy;
+import ncraft.capabilities.NecroEnergy.NecroProvider;
+import ncraft.capabilities.UndeadLine.IUndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayer;
+import ncraft.capabilities.UndeadLine.UndeadPlayerProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -10,6 +14,7 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent.Clone;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -28,10 +33,10 @@ EntityPlayer undeadPlayer;
 	public static void LichDeath(LivingDeathEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if  (level == 2) { // change to level 2, Lesser Lich + for final implemenation
+			if  (level == 2) { 
 				event.setCanceled(true);
 				player.setHealth(20);
-		
+
 			}
 		}
 	}
@@ -41,21 +46,37 @@ EntityPlayer undeadPlayer;
 	public static void SentientUndead(LivingDeathEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if  (level == 0) { // change to level 2, Lesser Lich + for final implemenation
-				PotionEffect potion = player.getActivePotionEffect(null);
-			if (potion == player.getActivePotionEffect(MobEffects.WITHER)) {
-					UndeadPlayer.level = 1;
+			if  (level == 0) {
+				System.out.println("Level Check Successful.");
+				IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+				level.setLevel(1);
 				}
 			}
 		}
+	
+	
+	@SubscribeEvent 
+	public static void CloneUndeadPlayer(Clone event) {
+		EntityPlayer player = event.getEntityPlayer();
+		IUndeadPlayer level = player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+		INecroEnergy energy = player.getCapability(NecroProvider.NECRO_ENERGY_CAP, null);
+		boolean wasDead = event.isWasDeath();
+		if (wasDead = true) {
+			level.setLevel(level.getLevel());
+			energy.setEnergy(energy.getEnergy());
+		}
 	}
+
+
+
+}
 	
 	
 		
 	
 	
 	
-}
+
 	
 	
 

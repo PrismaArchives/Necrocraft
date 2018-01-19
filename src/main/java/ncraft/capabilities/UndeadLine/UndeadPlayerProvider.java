@@ -6,7 +6,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
-public class UndeadLevelProvider implements ICapabilitySerializable<NBTBase> {
+public class UndeadPlayerProvider implements ICapabilitySerializable<NBTBase> {
 
 	@CapabilityInject(IUndeadPlayer.class)
 	

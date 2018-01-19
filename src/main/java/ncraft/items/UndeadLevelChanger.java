@@ -4,7 +4,6 @@ package ncraft.items;
 import ncraft.Ncraft;
 import ncraft.capabilities.NecroEnergy.INecroEnergy;
 import ncraft.capabilities.UndeadLine.IUndeadPlayer;
-import ncraft.capabilities.UndeadLine.UndeadLevelProvider;
 import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
