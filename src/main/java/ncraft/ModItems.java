@@ -1,8 +1,8 @@
 package ncraft;
 
 
-import ncraft.items.SummoningStaff;
 import ncraft.items.UndeadLevelChanger;
+import ncraft.items.staves.SummoningStaff;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 public class ModItems {

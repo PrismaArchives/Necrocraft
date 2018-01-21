@@ -22,8 +22,10 @@ public class NecroEnergy implements INecroEnergy {
 		else if (level == 3) {
 			return 10000;
 		}
+		else if (level == 0) {
 			return 250;
-		
+		}
+			return 3000;
 		
 		
 	}

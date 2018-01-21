@@ -5,9 +5,13 @@ import ncraft.capabilities.NecroEnergy.NecroProvider;
 import ncraft.capabilities.UndeadLine.IUndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayerProvider;
+import ncraft.items.staves.Staves;
+import ncraft.items.staves.SummoningStaff;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
@@ -16,17 +20,18 @@ import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.Clone;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
-@EventBusSubscriber
 
+@EventBusSubscriber
 public class NecroEventHandler {
 EntityPlayer undeadPlayer;
  	static int level = UndeadPlayer.level;
-	
+
 	
 	
 	@SubscribeEvent
@@ -36,7 +41,6 @@ EntityPlayer undeadPlayer;
 			if  (level == 2) { 
 				event.setCanceled(true);
 				player.setHealth(20);
-
 			}
 		}
 	}
@@ -67,8 +71,11 @@ EntityPlayer undeadPlayer;
 		}
 	}
 
-
-
+	@SubscribeEvent
+	public static void SummoningStaffUse(RightClickItem event) {
+	
+			
+	}
 }
 	
 	
