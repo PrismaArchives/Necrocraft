@@ -27,14 +27,11 @@ public class Phylactery extends Block implements ITileEntityProvider {
 		
 	}
 	
-	@SubscribeEvent
-	public void onPhylacteryRightClick (PlayerInteractEvent.RightClickBlock event) {
-
-	
 		
 	
 	
 
-	}
-	
+
 }
+	
+

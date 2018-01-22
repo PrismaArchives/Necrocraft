@@ -4,11 +4,15 @@ public interface IStaves {
 
 	
 	// set's that the item is a magical staff
-	void setStaff();
+	void setStaff(int stafftype);
 	
 	
 	
-	boolean getStaff();
+	int getStaff();
+
+
+
+	
 	
 	
 }

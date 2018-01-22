@@ -1,5 +1,5 @@
 package ncraft.capabilities.Staves;
 
 public enum StavesType {
-	SUMMONING, HEALING
+	SUMMONING, HEALING, DEATH, DECAY, BASIC
 }

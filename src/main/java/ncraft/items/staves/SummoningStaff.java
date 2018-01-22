@@ -8,7 +8,6 @@ import net.minecraft.item.ItemStack;
 
 public class SummoningStaff extends Item {
    
-	boolean Staff = StavesType.isStaff();
 	
 	
 	public SummoningStaff(){

@@ -34,7 +34,6 @@ public class NecroProvider implements ICapabilitySerializable<NBTBase> {
 	@Override
 	public void deserializeNBT(NBTBase nbt) {
 		NECRO_ENERGY_CAP.getStorage().readNBT(NECRO_ENERGY_CAP, this.instance, null, nbt);
-		
 	}
 
 }

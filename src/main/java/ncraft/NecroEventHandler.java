@@ -5,7 +5,6 @@ import ncraft.capabilities.NecroEnergy.NecroProvider;
 import ncraft.capabilities.UndeadLine.IUndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayerProvider;
-import ncraft.items.staves.Staves;
 import ncraft.items.staves.SummoningStaff;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;

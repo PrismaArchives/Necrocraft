@@ -21,19 +21,17 @@ public class StavesProvider implements ICapabilitySerializable {
 
 	@Override
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-		
+		return capability == STAVES_CAP ? STAVES_CAP.<T> cast (this.instance) : null;
 	}
 
 	@Override
 	public NBTBase serializeNBT() {
-		// TODO Auto-generated method stub
-		return null;
+		return STAVES_CAP.getStorage().writeNBT(STAVES_CAP, this.instance, null);
 	}
 
 	@Override
 	public void deserializeNBT(NBTBase nbt) {
-		// TODO Auto-generated method stub
-		
+		STAVES_CAP.getStorage().readNBT(STAVES_CAP, this.instance, null, nbt);
 	}
 
 }

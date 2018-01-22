@@ -2,6 +2,7 @@ package ncraft.capabilities;
 
 import ncraft.Ncraft;
 import ncraft.capabilities.NecroEnergy.NecroProvider;
+import ncraft.capabilities.Staves.StavesProvider;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -12,7 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class CapabilityHandle {
 	public static final ResourceLocation NECRO_ENERGY_CAP = new ResourceLocation(Ncraft.MODID, "necro energy");
 	public static final ResourceLocation UNDEAD_LEVEL_CAP = new ResourceLocation(Ncraft.MODID, "undead level");
-
+	public static ResourceLocation STAVES_CAP = new ResourceLocation(Ncraft.MODID, "staves");
 	
 	@SubscribeEvent
 	public void attachCapabilityPlayer(AttachCapabilitiesEvent<Entity> event ) {
@@ -25,6 +26,7 @@ public class CapabilityHandle {
 	@SubscribeEvent
 	public void attachCapabilityItems(AttachCapabilitiesEvent<ItemStack> event) {
 		event.addCapability(NECRO_ENERGY_CAP, new NecroProvider());
+		event.addCapability(STAVES_CAP, new StavesProvider());
 	}
 	
 	
