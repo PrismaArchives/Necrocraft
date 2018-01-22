@@ -73,12 +73,19 @@ EntityPlayer undeadPlayer;
 
 	
 	@SubscribeEvent
+<<<<<<< master
 	public static void HolySwordAttack(LivingAttackEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 				//if (event.getSource() == )
 			}
 		}
+=======
+	public static void SummoningStaffUse(RightClickItem event) {
+	
+			
+	}
+>>>>>>> bfdb678 Adding Holy Sword implementation.
 }
 	
 	

@@ -2,10 +2,10 @@ package ncraft.proxy;
 
 import java.beans.EventHandler;
 
+import ncraft.ModBlocks;
 import ncraft.Ncraft;
 import ncraft.NecroEventHandler;
-import ncraft.blocks.ModBlocks;
-import ncraft.blocks.basic.BoneCobble;
+import ncraft.blocks.BoneCobble;
 import ncraft.blocks.phylactery.Phylactery;
 import ncraft.blocks.phylactery.PhylacteryTileEntity;
 import ncraft.capabilities.NecroEnergy.INecroEnergy;
@@ -15,7 +15,7 @@ import ncraft.capabilities.NecroEnergy.NecroStorage;
 import ncraft.capabilities.UndeadLine.IUndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayer;
 import ncraft.capabilities.UndeadLine.UndeadPlayerStorage;
-import ncraft.items.debug.UndeadLevelChanger;
+import ncraft.items.UndeadLevelChanger;
 import ncraft.items.staves.SummoningStaff;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
