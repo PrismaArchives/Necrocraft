@@ -71,8 +71,8 @@ EntityPlayer undeadPlayer;
 	}
 
 	@SubscribeEvent
-	public static void SummoningStaffUse(RightClickItem event) {
-	
+	public static void StaffUse(RightClickItem event) {
+		
 			
 	}
 }

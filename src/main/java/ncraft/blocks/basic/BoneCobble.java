@@ -1,4 +1,4 @@
-package ncraft.blocks;
+package ncraft.blocks.basic;
 
 import net.minecraft.block.material.Material;
 import ncraft.Ncraft;

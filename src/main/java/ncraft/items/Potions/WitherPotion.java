@@ -1,4 +1,4 @@
-package ncraft.items;
+package ncraft.items.Potions;
 
 public class WitherPotion {
 

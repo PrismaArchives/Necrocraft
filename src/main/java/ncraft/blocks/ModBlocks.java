@@ -1,6 +1,6 @@
-package ncraft;
+package ncraft.blocks;
 
-import ncraft.blocks.BoneCobble;
+import ncraft.blocks.basic.BoneCobble;
 import ncraft.blocks.phylactery.Phylactery;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 

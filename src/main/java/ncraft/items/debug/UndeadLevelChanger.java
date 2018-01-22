@@ -1,4 +1,4 @@
-package ncraft.items;
+package ncraft.items.debug;
 
 
 import ncraft.Ncraft;
