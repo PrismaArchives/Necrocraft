@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
@@ -70,11 +71,14 @@ EntityPlayer undeadPlayer;
 		}
 	}
 
+	
 	@SubscribeEvent
-	public static void StaffUse(RightClickItem event) {
-		
-			
-	}
+	public static void HolySwordAttack(LivingAttackEvent event) {
+		if (event.getEntity() instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.getEntity();
+				//if (event.getSource() == )
+			}
+		}
 }
 	
 	
