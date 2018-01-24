@@ -30,7 +30,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 @EventBusSubscriber
 public class NecroEventHandler {
 EntityPlayer undeadPlayer;
- 	static int level = UndeadPlayer.level;
 
 	
 	
@@ -38,7 +37,8 @@ EntityPlayer undeadPlayer;
 	public static void LichDeath(LivingDeathEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if  (level == 0) { 
+			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+			if  (level.getLevel() == 2) { 
 				event.setCanceled(true);
 				player.setHealth(20);
 			}
@@ -50,10 +50,10 @@ EntityPlayer undeadPlayer;
 	public static void SentientUndead(LivingDeathEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if  (level == 0) {
-				IUndeadPlayer undlevel =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
-				undlevel.setLevel(1);
-				if ( level == 1) {
+			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+			if  (level.getLevel() == 0) {
+				level.setLevel(1);
+				if ( level.getLevel() == 1) {
 					System.out.println("Level 1.");
 				}
 				else {
