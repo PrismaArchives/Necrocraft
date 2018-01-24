@@ -38,7 +38,7 @@ EntityPlayer undeadPlayer;
 	public static void LichDeath(LivingDeathEvent event) {
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
-			if  (level == 2) { 
+			if  (level == 0) { 
 				event.setCanceled(true);
 				player.setHealth(20);
 			}
@@ -51,12 +51,17 @@ EntityPlayer undeadPlayer;
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			if  (level == 0) {
-				System.out.println("Level Check Successful.");
-				IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
-				level.setLevel(1);
+				IUndeadPlayer undlevel =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+				undlevel.setLevel(1);
+				if ( level == 1) {
+					System.out.println("Level 1.");
+				}
+				else {
+					System.out.println("Level 0.");
 				}
 			}
 		}
+	}
 	
 	
 	@SubscribeEvent 
