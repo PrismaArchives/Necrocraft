@@ -14,6 +14,8 @@ public class AllyZombie extends EntityZombie implements IEntityOwnable {
 	public AllyZombie(World worldIn) {
 		super(worldIn);
 		// TODO Auto-generated constructor stub
+		float maxHealth = this.getMaxHealth();
+		maxHealth = 10.0F; 
 	}
 
 	@Override

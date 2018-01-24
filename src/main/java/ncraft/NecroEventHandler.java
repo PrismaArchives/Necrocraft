@@ -31,7 +31,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 @EventBusSubscriber
 public class NecroEventHandler {
 
-	
+
 	
 	@SubscribeEvent
 	public static void LichDeath(LivingDeathEvent event) {
@@ -39,7 +39,7 @@ public class NecroEventHandler {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
 			int playerlvl = level.getLevel();
-			if  (playerlvl == 1) { 
+			if  (playerlvl == 2) { 
 				event.setCanceled(true);
 				player.setHealth(20);
 		
@@ -77,16 +77,28 @@ public class NecroEventHandler {
 		if (wasDead = true) {
 			level.setLevel(prevlevel.getLevel());
 			energy.setEnergy(energy.getEnergy());
+			int undlevel = level.getLevel();
+			if (undlevel == 1) {
+							}
 		}
+	}
+	
+
+	@SubscribeEvent
+	public static void UndeadPlayerHurt(LivingHurtEvent event) {
+		if (event.getEntity() instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) event.getEntity();
+			IUndeadPlayer level = player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+			int undlevel = level.getLevel();
+			if (undlevel == 1) {
+			}
+		}
+	
 	}
 
 	
-
-
-	@SubscribeEvent
-	public static void UndeadPlayerAlly(ZombieEvent event) {
-		
-	}
+	
+	
 	
 	
 	
