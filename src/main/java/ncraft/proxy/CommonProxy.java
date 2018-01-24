@@ -8,6 +8,7 @@ import ncraft.NecroEventHandler;
 import ncraft.blocks.BoneCobble;
 import ncraft.blocks.phylactery.Phylactery;
 import ncraft.blocks.phylactery.PhylacteryTileEntity;
+import ncraft.capabilities.CapabilityHandler;
 import ncraft.capabilities.NecroEnergy.INecroEnergy;
 import ncraft.capabilities.NecroEnergy.NecroEnergy;
 import ncraft.capabilities.NecroEnergy.NecroProvider;
@@ -33,12 +34,14 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @EventBusSubscriber
 public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent e) {
-		CapabilityManager.INSTANCE.register(INecroEnergy.class,new NecroStorage(),NecroEnergy.class);
-		CapabilityManager.INSTANCE.register(IUndeadPlayer.class, new UndeadPlayerStorage(), UndeadPlayer.class);
+		
 	} 
 	
 	public void Init(FMLInitializationEvent e) {
+		MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
 		
+		CapabilityManager.INSTANCE.register(INecroEnergy.class,new NecroStorage(),NecroEnergy.class);
+		CapabilityManager.INSTANCE.register(IUndeadPlayer.class, new UndeadPlayerStorage(), UndeadPlayer.class);
 	}
 	
 	public void postInit(FMLPostInitializationEvent e) {

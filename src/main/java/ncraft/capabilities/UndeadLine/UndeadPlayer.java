@@ -12,7 +12,7 @@ public class UndeadPlayer implements IUndeadPlayer {
 	
 	
 	
-	public static int level = 0;
+	private int level = 0;
 	
 	
 	
@@ -24,22 +24,11 @@ public class UndeadPlayer implements IUndeadPlayer {
 
 	@Override
 	public int getLevel() {
-		// TODO Auto-generated method stub
 		return this.level;
 	}
 	
 	
-	
 
-	boolean isSentientUndead(EntityPlayer player)
-	{
-		if (level == 1) {
-			
-			return true;
-		}
-		return false;
-	}
-	
 
 
 

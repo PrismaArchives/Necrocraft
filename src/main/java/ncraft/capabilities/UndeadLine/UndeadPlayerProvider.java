@@ -9,7 +9,6 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 public class UndeadPlayerProvider implements ICapabilitySerializable<NBTBase> {
 
 	@CapabilityInject(IUndeadPlayer.class)
-	
 	public static final Capability<IUndeadPlayer> UNDEAD_PLAYER_CAP = null;
 	
 	private IUndeadPlayer instance = UNDEAD_PLAYER_CAP.getDefaultInstance();

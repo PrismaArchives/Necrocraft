@@ -38,7 +38,8 @@ EntityPlayer undeadPlayer;
 		if (event.getEntity() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
-			if  (level.getLevel() == 2) { 
+			int playerlvl = level.getLevel();
+			if  (playerlvl == 2) { 
 				event.setCanceled(true);
 				player.setHealth(20);
 			}
@@ -53,6 +54,7 @@ EntityPlayer undeadPlayer;
 			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
 			if  (level.getLevel() == 0) {
 				level.setLevel(1);
+				player.setHealth(1);
 				if ( level.getLevel() == 1) {
 					System.out.println("Level 1.");
 				}
@@ -68,11 +70,12 @@ EntityPlayer undeadPlayer;
 	public static void CloneUndeadPlayer(Clone event) {
 		EntityPlayer player = event.getEntityPlayer();
 		IUndeadPlayer level = player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
+		IUndeadPlayer prevlevel = event.getOriginal().getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
 		INecroEnergy energy = player.getCapability(NecroProvider.NECRO_ENERGY_CAP, null);
 		boolean wasDead = event.isWasDeath();
 		if (wasDead = true) {
-			level.setLevel(level.getLevel());
-			energy.setEnergy(energy.getEnergy());
+			level.setLevel(prevlevel.getLevel());
+			//energy.setEnergy(energy.getEnergy());
 		}
 	}
 

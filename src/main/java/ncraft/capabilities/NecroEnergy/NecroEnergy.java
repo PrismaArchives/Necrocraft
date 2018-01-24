@@ -8,7 +8,7 @@ import net.minecraft.util.text.ITextComponent;
 public class NecroEnergy implements INecroEnergy {
 	
 	
-	int level = UndeadPlayer.level;
+	int level; // import level from undeadplayer cap.
 	
 	int energy = 0;
 	int max_energy() {

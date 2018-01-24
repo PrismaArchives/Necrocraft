@@ -9,16 +9,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class CapabilityHandle {
-	public static final ResourceLocation NECRO_ENERGY_CAP = new ResourceLocation(Ncraft.MODID, "necro energy");
-	public static final ResourceLocation UNDEAD_LEVEL_CAP = new ResourceLocation(Ncraft.MODID, "undead level");
-	public static ResourceLocation STAVES_CAP = new ResourceLocation(Ncraft.MODID, "staves");
+
+public class CapabilityHandler {
+	public static final ResourceLocation NECRO_ENERGY_CAP = new ResourceLocation(Ncraft.MODID, "necroenergy");
+	public static final ResourceLocation UNDEAD_LEVEL_CAP = new ResourceLocation(Ncraft.MODID, "undeadlevel");
+	//public static final ResourceLocation STAVES_CAP = new ResourceLocation(Ncraft.MODID, "staves");
 	
 	@SubscribeEvent
 	public void attachCapabilityPlayer(AttachCapabilitiesEvent<Entity> event ) {
-		
+				
 		event.addCapability(NECRO_ENERGY_CAP,new NecroProvider());
 		
 		event.addCapability(UNDEAD_LEVEL_CAP,new UndeadPlayerProvider()); //accidently used necroprovider
@@ -26,8 +28,8 @@ public class CapabilityHandle {
 	
 	@SubscribeEvent
 	public void attachCapabilityItems(AttachCapabilitiesEvent<ItemStack> event) {
-		event.addCapability(NECRO_ENERGY_CAP, new NecroProvider());
-		event.addCapability(STAVES_CAP, new StavesProvider());
+		//event.addCapability(NECRO_ENERGY_CAP, new NecroProvider());
+		//event.addCapability(STAVES_CAP, new StavesProvider());
 	}
 	
 	

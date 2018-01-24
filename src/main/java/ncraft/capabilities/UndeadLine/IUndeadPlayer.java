@@ -7,12 +7,12 @@ public interface IUndeadPlayer {
 	
 	
 	
-	void setLevel(int currentlv);
+	public void setLevel(int currentlv);
 	
 
 
 
-	int getLevel();
+	public int getLevel();
 	
 	
 }
