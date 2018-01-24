@@ -18,6 +18,7 @@ import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHealEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.ZombieEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent.Clone;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem;
@@ -29,7 +30,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
 @EventBusSubscriber
 public class NecroEventHandler {
-EntityPlayer undeadPlayer;
 
 	
 	
@@ -39,9 +39,10 @@ EntityPlayer undeadPlayer;
 			EntityPlayer player = (EntityPlayer) event.getEntity();
 			IUndeadPlayer level =player.getCapability(UndeadPlayerProvider.UNDEAD_PLAYER_CAP, null);
 			int playerlvl = level.getLevel();
-			if  (playerlvl == 2) { 
+			if  (playerlvl == 1) { 
 				event.setCanceled(true);
 				player.setHealth(20);
+		
 			}
 		}
 	}
@@ -75,19 +76,20 @@ EntityPlayer undeadPlayer;
 		boolean wasDead = event.isWasDeath();
 		if (wasDead = true) {
 			level.setLevel(prevlevel.getLevel());
-			//energy.setEnergy(energy.getEnergy());
+			energy.setEnergy(energy.getEnergy());
 		}
 	}
 
 	
-	@SubscribeEvent
 
-	public static void HolySwordAttack(LivingAttackEvent event) {
-		if (event.getEntity() instanceof EntityPlayer) {
-			EntityPlayer player = (EntityPlayer) event.getEntity();
-				//if (event.getSource() == )
-			}
+
+	@SubscribeEvent
+	public static void UndeadPlayerAlly(ZombieEvent event) {
+		
 	}
+	
+	
+	
 }
 
 	

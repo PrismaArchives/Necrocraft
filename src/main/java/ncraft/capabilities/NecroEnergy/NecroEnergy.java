@@ -36,6 +36,9 @@ public class NecroEnergy implements INecroEnergy {
 	@Override
 	public void setEnergy(int enmod) {
 		this.energy = enmod;
+		if (this.energy > max_energy()) {
+			this.energy = max_energy();
+		}
 	}
 
 
